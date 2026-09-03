@@ -12,7 +12,7 @@
 """ # you can use three double-quotes to write multi-line comments
 XXX Write your pseudocode here XXX
 """
-
+# MY NAME IS LAYLA
 # %% ###########################################################
 # Problem 2: Comment your code
 # Comments are very helpful for others (especially when pair-coding!) and yourself to understand your code! Add comments to the following code, which will run but produces the wrong output. Once you comment the code, you should be able to identify the error and fix it (the correct total that should be printed is 12).
