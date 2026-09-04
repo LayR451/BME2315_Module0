@@ -121,42 +121,51 @@ print(totals_list)
 # You will only see one error at a time when you run the code. After fixing one error, run the code again to see the next error. Your final code should work correctly and will have comments where the original errors were.
 
 
-def find_fib_above_limit(limit):
+def find_fib_above_limit(limit): 
     """# The function inputs an integer called "limit" and finds the first number that goes above "limit" in the fibonacci sequence. It returns the index of that number.
     :param limit: limit of fibonacci sequence
     :type limit: integer
     :return: index of the first number above limit
     :rtype: integer
     """
-    a = "0"
-    b = "1"
+    limit = int(limit)  
+    a = 0
+    b = 1
+    index = 0
 
-    while a <= limit:
+    while a <= limit:   # A typeError, meaning wrong use of operator/category, due to a <= between a str and int. I fixed it by making a and b ints, not strings. Then, a NameError because limit was not defined well, so I made a line to ensure Limit was always int and wouldn't cause an edge case error.
         next_value = a + b
         a = b
         b = next_value
-        index += 1
+        index += 1   # UnboundLocalError because index isn't defined outside of the function. So, I defined it outside of the function.
 
     return index
 
 
 result = find_fib_above_limit(50)
 print("The index of the first number above your limit is: ", result)
+
+
+
 # %% ###########################################################
 # Problem 6: Test your code
-# The following function will run but will output the wrong answer sometimes. Add test cases to verify that the function works correctly for a variety of inputs. If you find any inputs that produce incorrect outputs, fix the function. The function, when working properly, should return the sum of all odd Fibonacci numbers less than or equal to the input "limit".
+# The following function will run but will output the wrong answer sometimes. Add test cases to verify that the function works correctly for a variety of inputs. If you find any inputs that produce incorrect outputs, fix the function. 
+# The function, when working properly, should return the sum of all odd Fibonacci numbers less than or equal to the input "limit".
 
 
-def sum_even_fib(limit):
+def sum_odd_fib(limit):
     a, b = 0, 1
     total = 0
     while b <= limit:
-        if b % 2 == 0:  # This line checks if the Fibonacci number is even
-            total = b
+        if b % 2 != 0:
+            total += b
         a, b = b, a + b
     return total
 
 
 # Add your test cases here
+sum_odd_fib(3)
+
+
 
 # %%
