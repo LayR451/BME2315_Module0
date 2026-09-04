@@ -28,10 +28,9 @@ While the count is less than the N,
       add to the count to show a cycle has been completed
       exit 
 
-
-
 """
-# MY NAME IS LAYLA
+
+
 # %% ###########################################################
 # Problem 2: Comment your code
 # Comments are very helpful for others (especially when pair-coding!) and yourself to understand your code! Add comments to the following code, which will run but produces the wrong output. Once you comment the code, you should be able to identify the error and fix it (the correct total that should be printed is 12).
@@ -59,24 +58,25 @@ print(total)   # printing our final answer
 '''
 Strategy: Use above Fibonnaci sequence loop to feed into a list, and then run it on that list
 '''
-import numpy as np
+
+import numpy as np  # this will allow for the standard deviation function
 N = 10
 
 a = 0 # set a to the first fibonacci number
 b = 1 # set b to the second fibonacci number
 count = 0 # The count is set to 0
 total = 0 # Total sum set to 0
-f_sequence = [0]
+f_sequence = [0]  # creating a list to add add terms to
 
 while count < (N-1):  # Because we start with a and b terms, we only need 5 more cycles, so less than n-1
-    f_sequence.append(b)
+    f_sequence.append(b)   # adding terms to list
     total = total + b  # adding up the newest term to the totla
     next_value = a + b   # defining the next term
     a = b              # resetting the new a value
     b = next_value     # resetting the new b value 
     count = count + 1  # updating our count 
 
-std_dev = np.std(f_sequence)
+std_dev = np.std(f_sequence)   # running the standard deviation of the list
 print(f_sequence, 'has a standard deviation of', std_dev)
 
 
@@ -102,10 +102,10 @@ def fibonacci(N):
 
     return total
 
-totals_list = [0]
+totals_list = [0]  
 
-for N in [5, 10, 15, 20, 25, 30]:
-    a = fibonacci(N)
+for N in [5, 10, 15, 20, 25, 30]:   # this section cycles through the N values, runs the function, and then adds them to the list for printing
+    a = fibonacci(N) 
     totals_list.append(a)
 
 print(totals_list)
@@ -153,7 +153,7 @@ print("The index of the first number above your limit is: ", result)
 # The function, when working properly, should return the sum of all odd Fibonacci numbers less than or equal to the input "limit".
 
 
-def sum_odd_fib(limit):
+def sum_odd_fib(limit):   # edits made: changed function name, changed if loop to test for odd, adds b to total
     a, b = 0, 1
     total = 0
     while b <= limit:
