@@ -165,6 +165,8 @@ def sum_odd_fib(limit):
 
 # Add your test cases here
 sum_odd_fib(3)
+sum_odd_fib(5)
+sum_odd_fib(7)
 
 
 
