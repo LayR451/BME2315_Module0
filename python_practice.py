@@ -2,6 +2,12 @@
 # As discussed in class, feel free to use AI tools to help you complete this assignment, but remember to cite them.
 # I encourage you to try the problems yourself first and only use AI tools when you are stuck to benefit your learning. 
 
+
+
+# Heading
+# Name: Layla Ragland 
+
+
 # %% ###########################################################
 # Problem 1: Practice writing pseudocode
 
@@ -10,7 +16,20 @@
 # Example: If N = 5, the output should be 0 + 1 + 1 + 2 + 3 = 7
 
 """ # you can use three double-quotes to write multi-line comments
-XXX Write your pseudocode here XXX
+First, set 2 variables to the first 2 digits of Fibonacci (a and b)
+Set a count and a total
+Define a variable as the interger value of the number of terms you want in your sequence (N)
+
+While the count is less than the N,
+      The total adds b
+      The next value is set as the sum of a and b
+      We need a new a, make it the old b
+      And now b is the next value we created
+      add to the count to show a cycle has been completed
+      exit 
+
+
+
 """
 # MY NAME IS LAYLA
 # %% ###########################################################
@@ -20,23 +39,43 @@ N = 6
 
 a = 0 # set a to the first fibonacci number
 b = 1 # set b to the second fibonacci number
-count = 0
-total = 0
+count = 0 # The count is set to 0
+total = 0 # Total sum set to 0
 
-while count < N:
-    total = total + b
+while count < (N-1):  # Because we start with a and b terms, we only need 5 more cycles, so less than n-1
+    total = total + b  # adding up the newest term to the totla
+    next_value = a + b   # defining the next term
+    a = b              # resetting the new a value
+    b = next_value     # resetting the new b value 
+    count = count + 1  # updating our count 
 
-    next_value = a + b
-    a = b
-    b = next_value
+# cycling through while loop until count is > N-1
 
-    count = count + 1
-
-print(total)
+print(total)   # printing our final answer
 
 # %% ###########################################################
 # Problem 3: Using common Python libraries
 # What is the standard deviation of the first 10 numbers in the fibonacci sequence? Use the numpy library to calculate the standard deviation.
+'''
+Strategy: Use above Fibonnaci sequence loop to feed into a list, and then run it on that list
+'''
+N = 10
+
+a = 0 # set a to the first fibonacci number
+b = 1 # set b to the second fibonacci number
+count = 0 # The count is set to 0
+total = 0 # Total sum set to 0
+f_sequence = [0]
+
+while count < (N-1):  # Because we start with a and b terms, we only need 5 more cycles, so less than n-1
+    f_sequence.append(b)
+    total = total + b  # adding up the newest term to the totla
+    next_value = a + b   # defining the next term
+    a = b              # resetting the new a value
+    b = next_value     # resetting the new b value 
+    count = count + 1  # updating our count 
+
+print(f_sequence)
 
 # %% ###########################################################
 # Problem 4: Don't repeat yourself by writing functions
