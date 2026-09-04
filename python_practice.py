@@ -59,6 +59,7 @@ print(total)   # printing our final answer
 '''
 Strategy: Use above Fibonnaci sequence loop to feed into a list, and then run it on that list
 '''
+import numpy as np
 N = 10
 
 a = 0 # set a to the first fibonacci number
@@ -75,12 +76,40 @@ while count < (N-1):  # Because we start with a and b terms, we only need 5 more
     b = next_value     # resetting the new b value 
     count = count + 1  # updating our count 
 
-print(f_sequence)
+std_dev = np.std(f_sequence)
+print(f_sequence, 'has a standard deviation of', std_dev)
+
 
 # %% ###########################################################
 # Problem 4: Don't repeat yourself by writing functions
 # Write a function that takes an integer N as input and returns the sum of the first N numbers in the fibonacci sequence.
 # Then use this function to calculate the sums for N = 5, 10, 15, 20, 25, and 30 and print them as a list.
+
+
+def fibonacci(N):
+        
+    a = 0 # set a to the first fibonacci number
+    b = 1 # set b to the second fibonacci number
+    count = 0 # The count is set to 0
+    total = 0 # Total sum set to 0
+
+    while count < (N-1):  # Because we start with a and b terms, we only need 5 more cycles, so less than n-1
+        total = total + b  # adding up the newest term to the totla
+        next_value = a + b   # defining the next term
+        a = b              # resetting the new a value
+        b = next_value     # resetting the new b value 
+        count = count + 1  # updating our count 
+
+    return total
+
+totals_list = [0]
+
+for N in [5, 10, 15, 20, 25, 30]:
+    a = fibonacci(N)
+    totals_list.append(a)
+
+print(totals_list)
+
 
 # %% ###########################################################
 # Problem 5: Read your error messages
